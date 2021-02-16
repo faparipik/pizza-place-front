@@ -11,7 +11,7 @@ const Card = ({ title, children, onSubmit }) => {
   };
   return (
     <div className="container">
-      <div className="container_title">{title}</div>
+      <h1 className="container_title">{title}</h1>
       <div className="container_separator" />
       <div className="container_body">
         <Form noValidate onSubmit={submitForm}>
@@ -46,7 +46,10 @@ const Card = ({ title, children, onSubmit }) => {
 Card.propTypes = {
   title: PropTypes.string,
   onSubmit: PropTypes.func,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 Card.defaultProps = {
