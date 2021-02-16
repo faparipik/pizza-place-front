@@ -1,23 +1,22 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { Switch, BrowserRouter } from 'react-router-dom';
+import store from './redux/store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="`App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a className="App`-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div>test</div>
+      <BrowserRouter>
+        <Switch>
+          {/* <Route path="/login" component={Login} /> */}
+          {/* <Route path="/file-viewer" component={FileViewer} /> */}
+          {/* <PrivateRoute path="/sign-in-as" component={SignInAs} /> */}
+          {/* <PrivateRoute path="/" component={Homepage} /> */}
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
