@@ -11,7 +11,6 @@ const SelectPizzaSize = () => {
   return (
     <>
       <h5 className="text-center">Select Pizza Size</h5>
-      <div>{selectedSize}</div>
       <div className="select_size_box">
         <SmallBox
           title="Small"
