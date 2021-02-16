@@ -1,0 +1,21 @@
+.box {
+  background-color: $maron-color;
+  font-size: 2em;
+  min-height: 50px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box:hover {
+  background-color: $maron-color-lighter;
+}
+
+.box:focus {
+  outline: none;
+}
+
+.box_checked {
+  box-shadow: inset 0px 0px 5px $maron-color-darker;
+}
