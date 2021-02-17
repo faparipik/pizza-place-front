@@ -7,6 +7,14 @@
 
 - Clone this project
 
+- Set the environment variables:
+
+```
+cp .env.example .env
+```
+
+> open .env file and change environment variables (if needed)
+
 - `npm install` to install required dependencies
 - `npm start` to start live server
 
