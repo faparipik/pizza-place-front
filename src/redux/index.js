@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import Nesto from '../modules/test/redux/redux';
+import OrderPizza from '../modules/OrderPizza/redux/orderPizzaReducer';
 
-const rootReducer = combineReducers({ Nesto });
+const rootReducer = combineReducers({ orderPizza: OrderPizza });
 
 export default rootReducer;
