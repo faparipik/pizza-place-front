@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import SmallBox from '../../commonComponents/SmallBox/index';
+import { setPizzaSize } from './redux/orderPizzaActions';
 import {
   SMALL_SIZE,
   MEDIUM_SIZE,
@@ -7,7 +9,11 @@ import {
 } from '../../constants/pizzaSizes';
 
 const SelectPizzaSize = () => {
-  const [selectedSize, setSelectedSize] = useState(null);
+  const dispatch = useDispatch();
+  const selectedSize = useSelector((state) => state.orderPizza.pizzaSize);
+  const setSelectedSize = (value) => {
+    dispatch(setPizzaSize(value));
+  };
   return (
     <>
       <h5 className="text-center">Select Pizza Size</h5>
