@@ -12,13 +12,15 @@ const SelectIngredients = () => {
   const selectedIngredients = useSelector(
     (state) => state.orderPizza.selectedIngredients,
   );
-  const handleOnClick = (checked, id) => {
-    dispatch(setIngredients({ ...selectedIngredients, [id]: checked }));
+  const handleOnClick = (id) => {
+    dispatch(
+      setIngredients({ ...selectedIngredients, [id]: !selectedIngredients[id] }),
+    );
   };
 
   useEffect(() => {
     dispatch(getIngredients());
-  }, [selectedIngredients]);
+  }, []);
   return (
     <>
       <h5 className="text-center mt-5">Select Ingredients</h5>
@@ -29,7 +31,7 @@ const SelectIngredients = () => {
               <Col xs="3" key={i._id}>
                 <CheckBox
                   label={i.name}
-                  onClick={(checked) => handleOnClick(checked, i._id)}
+                  onChange={() => handleOnClick(i._id)}
                   isChecked={selectedIngredients[i._id]}
                 />
               </Col>
