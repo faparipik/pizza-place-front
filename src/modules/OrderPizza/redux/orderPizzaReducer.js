@@ -1,4 +1,4 @@
-import { GET_DATA, SET_DATA } from './orderPizzaActionsTypes';
+import { GET_DATA, SET_DATA, SET_PIZZA_SIZE } from './orderPizzaActionsTypes';
 
 const initialState = { selectedIngredients: {} };
 
@@ -13,6 +13,12 @@ export default (state = initialState, { type, payload = {} }) => {
       return {
         ...state,
         selectedIngredients: payload,
+      };
+
+    case SET_PIZZA_SIZE:
+      return {
+        ...state,
+        pizzaSize: payload,
       };
     default:
       return state;
