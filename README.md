@@ -24,4 +24,4 @@ cp .env.example .env
 - `npm build` to build project
 - `npm test` to start tests
 - `npm eslint` to check for errors in code
-- `npm eslint-fix` to fix errors in code
+- `npm eslint-fix` to fix errors in codee
